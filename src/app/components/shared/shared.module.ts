@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatListModule } from '@angular/material/list';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -44,7 +46,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatListModule
 
   ],
   exports: [
@@ -64,7 +67,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatListModule,
+
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }

@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Menu } from 'src/app/interfaces/menu';
-import { MenuService } from 'src/app/services/menu.service';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { MenuService } from 'src/app/services/menu.service';
+import { Menu } from 'src/app/interfaces/menu';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class DashboardComponent {
   public menu:Menu[];
-  
+  /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -31,11 +31,8 @@ export class NavbarComponent implements OnInit {
       ];
     })
   );
-  constructor(private breakpointObserver: BreakpointObserver, private menuServices:MenuService) { }
 
-  ngOnInit(): void {
-    this.getMenu();
-  }
+  constructor(private breakpointObserver: BreakpointObserver, private menuServices:MenuService) {}
 
   getMenu(){
     this.menuServices.getMenu()
@@ -43,5 +40,4 @@ export class NavbarComponent implements OnInit {
         this.menu = menu;
       });
   }
-  
 }
