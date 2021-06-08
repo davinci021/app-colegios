@@ -1,0 +1,29 @@
+table {
+    width: 98%;
+    margin: auto;
+  }
+
+.lista{
+    width: 50px;
+}
+
+.nombre{
+    width: 100px;
+}
+
+.apellido{
+    width: 150px;
+}
+
+.notas {
+    width: 30px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }

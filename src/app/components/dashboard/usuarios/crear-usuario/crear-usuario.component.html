@@ -1,0 +1,55 @@
+<mat-toolbar>
+    <span>Crear Alumno</span>
+</mat-toolbar>
+
+<mat-card style="margin-top: 20px;">
+
+    <form (ngSubmit)="agregarAlumno()">
+        <mat-grid-list cols="4" rowHeight="70px">
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+               <mat-form-field class="ancho">
+                   <mat-label>Nombre</mat-label>
+                    <input matInput type="text" autocomplete="off">
+               </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3" [rowspan]="4">
+                <img src="../../../../../assets/img/avatar.png" height="100%">
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho">
+                    <mat-label>Apellido</mat-label>
+                     <input matInput type="text" autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho">
+                    <mat-label>Sexo</mat-label>
+                    <mat-select [disabled]="disableSelect.value">
+                        <mat-option *ngFor="let item of sexo" [value]="item">{{item}}</mat-option>
+                        
+                        
+                      </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho" appearance="fill">
+                    
+                    <mat-label>Input disabled</mat-label>
+                    <input matInput [matDatepicker]="dp3" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+
+                </mat-form-field>
+            </mat-grid-tile> -->
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <button mat-raised-button>Volver</button>
+                <button class="btn-mat" mat-raised-button color="primary" type="submit">Aceptar</button>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+
+        
+    </form>
+
+</mat-card>
