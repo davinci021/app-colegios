@@ -4,12 +4,12 @@
 
 <mat-card style="margin-top: 20px;">
 
-    <form (ngSubmit)="agregarAlumno()">
+    <form (ngSubmit)="agregarAlumno()" [formGroup]="alumnoForm">
         <mat-grid-list cols="4" rowHeight="70px">
             <mat-grid-tile [colspan]="1" [rowspan]="1">
                <mat-form-field class="ancho">
                    <mat-label>Nombre</mat-label>
-                    <input matInput type="text" autocomplete="off">
+                    <input formControlName="nombre" matInput type="text" autocomplete="off">
                </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="3" [rowspan]="4">
@@ -18,18 +18,26 @@
             <mat-grid-tile [colspan]="1" [rowspan]="1">
                 <mat-form-field class="ancho">
                     <mat-label>Apellido</mat-label>
-                     <input matInput type="text" autocomplete="off">
+                     <input formControlName="apellido" matInput type="text" autocomplete="off">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="1" [rowspan]="1">
                 <mat-form-field class="ancho">
                     <mat-label>Sexo</mat-label>
-                    <mat-select [disabled]="disableSelect.value">
+                  -  <mat-select formControlName="sexo">
                         <mat-option *ngFor="let item of sexo" [value]="item">{{item}}</mat-option>
                         
                         
                       </mat-select>
                 </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" class="ancho">
+                    <mat-label>Fecha Nacimiento</mat-label>
+                    <input formControlName="fec_nac" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
             </mat-grid-tile>
             <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
                 <mat-form-field class="ancho" appearance="fill">
@@ -42,7 +50,7 @@
                 </mat-form-field>
             </mat-grid-tile> -->
             <mat-grid-tile [colspan]="1" [rowspan]="1">
-                <button mat-raised-button>Volver</button>
+                <button mat-raised-button type="button">Volver</button>
                 <button class="btn-mat" mat-raised-button color="primary" type="submit">Aceptar</button>
             </mat-grid-tile>
 

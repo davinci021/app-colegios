@@ -1,0 +1,67 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="'side'"
+      [opened]="true">
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        
+      </button>
+      <mat-divider></mat-divider>
+      <mat-nav-list class="signature">
+        
+          <mat-card-header class="alumno">
+            <mat-card-title class="title">David Zamorano Nieto</mat-card-title>
+            <mat-card-subtitle>Profesor</mat-card-subtitle>
+            <img mat-card-avatar class="img-alumno" src="../../../../assets/img/avatar-2.jpg" width="100%">
+          </mat-card-header>
+       
+      </mat-nav-list>
+      <mat-divider></mat-divider>
+      
+    <mat-nav-list>
+      <a mat-list-item ><mat-icon>auto_stories</mat-icon>Asignaturas</a>
+      <a mat-list-item ><mat-icon>school</mat-icon>Alumnos</a>
+      <a mat-list-item [matMenuTriggerFor]="beforeMenu"><mat-icon style="color: #5848b3;">add_circle</mat-icon>
+        Agregar
+      </a>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item><mat-icon>add</mat-icon> Asignatura</button>
+        <button mat-menu-item><mat-icon>add</mat-icon>Alumno</button>
+      </mat-menu>
+      <a mat-list-item ><mat-icon style="color: #b99418;">folder</mat-icon>Archivos</a>
+    </mat-nav-list>
+    
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+      <a mat-list-item ><mat-icon style="color: #25915e;">description</mat-icon>Exportar</a>
+      <a mat-list-item ><mat-icon style="color: #7fa8c4;">print</mat-icon>Imprimir</a>
+      <a mat-list-item ><mat-icon>settings</mat-icon>Opciones y Herramientas</a>
+    </mat-nav-list>
+
+    <mat-divider></mat-divider>
+
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="sidenav.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>App Colegios</span>
+      <span class="example-spacer"></span>
+      <button *ngFor="let men of menu" mat-button [routerLink]="men.redirect">{{ men.nombre }}</button>
+      <span class="example-spacer"></span>
+      <button routerLink="login" mat-icon-button class="example-icon" aria-label="Example icon-button with logout icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

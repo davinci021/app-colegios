@@ -6,8 +6,8 @@ export interface Alumnos {
   nombre: string;
   apellido: string;
   position: number;
-  S1_S: number;
-  S1_E: number;
+  sexo: string;
+  fec_nac: number;
 }
 
 export interface Notas {
@@ -23,7 +23,7 @@ export interface Notas {
 export class UsuariosComponent implements OnInit {
   listarAlumnos: Alumnos[] = [];
   
-  displayedColumns: string[] = ['position', 'nombre', 'apellido', 'S1_S', 'S1_E', 'acciones'];
+  displayedColumns: string[] = ['position', 'nombre', 'apellido', 'Sexo', 'Fecha Nacimiento', 'acciones'];
   dataSource = new MatTableDataSource();
 
   constructor(private usuarioServices:UsuarioService) { }

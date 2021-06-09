@@ -4,8 +4,12 @@
         "redirect" : "inicio"
     },
     {
-        "nombre" : "Usuarios",
+        "nombre" : "Alumnos",
         "redirect" : "usuarios"
+    },
+    {
+        "nombre" : "Asistencia",
+        "redirect" : "asistencias"
     },
     {
         "nombre" : "Reportes",

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class CrearUsuarioComponent implements OnInit {
   disableSelect = new FormControl(false);
+  alumnoForm:FormGroup;
   sexo : any[] = ['Masculino', 'Femenino'];
 
   tiles: any[] = [
@@ -17,12 +18,19 @@ export class CrearUsuarioComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor() { }
+  constructor(private fb:FormBuilder) {
+    this.alumnoForm = this.fb.group({
+      nombre: 'david',
+      apellido: '',
+      sexo: '',
+      fec_nac: '',
+    })
+   }
 
   ngOnInit(): void {
   }
 
   agregarAlumno(){
-    
+    console.log(this.alumnoForm.value);
   }
 }
