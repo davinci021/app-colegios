@@ -20,10 +20,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { NewdashboarComponent } from './newdashboar/newdashboar.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent],
+  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent, NewdashboarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

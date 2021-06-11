@@ -1,0 +1,76 @@
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  padding: 10px 0 30px 50px;
+
+  border-radius: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* border: 1px solid #9b9b9b */
+}
+
+mat-nav-list {
+  display: grid;
+  gap: 1em;
+}
+
+mat-nav-list > button {
+  border-radius: 5px;
+  text-align: center;
+  font-weight: lighter;
+  color: #fff;
+  background: #00796b;
+  border: 1px solid transparent;
+  width: 70%;
+  transition: all 0.3s ease;
+}
+
+.dashtwo mat-nav-list button{
+  background: #654654!important;
+}
+
+.dashtwo mat-nav-list button:hover{
+  background: #ffffff!important;
+  border: 1px solid #654654;
+}
+
+.dashthree mat-nav-list button {
+  background: #8ba03f!important;
+}
+
+.dashthree mat-nav-list button:hover {
+  background: #ffffff!important;
+  border: 1px solid #8ba03f;
+}
+
+mat-nav-list button:hover {
+  color: rgb(77, 77, 77);
+  border: 1px solid #00796b;
+}
+
+.report button {
+  max-width: 300px;
+  min-width: 170px;
+}
+
+
+
+.dashboard-card-content > .grip-full {
+  margin: auto;
+  grid-column: span 2;
+  width: 50%;
+}
+

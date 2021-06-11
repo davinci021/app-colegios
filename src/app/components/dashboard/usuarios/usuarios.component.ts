@@ -7,7 +7,7 @@ export interface Alumnos {
   apellido: string;
   position: number;
   sexo: string;
-  fec_nac: number;
+  fec_nac: string;
 }
 
 export interface Notas {

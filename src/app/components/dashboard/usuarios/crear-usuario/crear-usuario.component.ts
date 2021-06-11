@@ -11,12 +11,6 @@ export class CrearUsuarioComponent implements OnInit {
   alumnoForm:FormGroup;
   sexo : any[] = ['Masculino', 'Femenino'];
 
-  tiles: any[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
 
   constructor(private fb:FormBuilder) {
     this.alumnoForm = this.fb.group({
@@ -32,5 +26,6 @@ export class CrearUsuarioComponent implements OnInit {
 
   agregarAlumno(){
     console.log(this.alumnoForm.value);
+    console.log(this.alumnoForm.value.fec_nac.toISOString().substring(0, 10));
   }
 }

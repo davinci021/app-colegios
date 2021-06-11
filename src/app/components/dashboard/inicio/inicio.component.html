@@ -1,3 +1,116 @@
 <mat-toolbar>
-    <span>Dashboard</span>
+    <span>Bienvenido Profesor(a)</span>
 </mat-toolbar>
+
+
+
+<mat-grid-list cols="4" rowHeight="70px">
+
+    <mat-grid-tile [colspan]="2" [rowspan]="6">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+
+                <mat-card-title>
+                    Profesor
+                </mat-card-title>
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item>Expandir</button>
+                    <button mat-menu-item>Eliminar</button>
+                </mat-menu>
+
+            </mat-card-header>
+
+            <mat-card-content class="dashboard-card-content">
+                <mat-nav-list>
+                    <button mat-menu-item>Ir a Notas</button>
+                    <button mat-menu-item>Ir a Perfil</button>
+
+                </mat-nav-list>
+                <mat-nav-list>
+                    <button mat-menu-item>Ir a Asignaturas</button>
+                    <button mat-menu-item>Ir a Asistencias</button>
+                </mat-nav-list>
+                <mat-nav-list class="grip-full">
+                    <button mat-menu-item>Ir a Cursos</button>
+                </mat-nav-list>
+                <mat-nav-list>
+                    <button mat-menu-item>Observaciones</button>
+                </mat-nav-list>
+                <mat-nav-list>
+                    <button mat-menu-item routerLink="/dashboard/usuarios">Ir a Alumnos</button>
+                </mat-nav-list>
+                <mat-nav-list class="grip-full">
+                    <button mat-menu-item>Opciones y Herramientas</button>
+                </mat-nav-list>
+            </mat-card-content>
+
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="6">
+        <mat-card class="dashboard-card dashtwo">
+            <mat-card-header>
+
+                <mat-card-title>
+                    Reportes
+                </mat-card-title>
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item>Expandir</button>
+                    <button mat-menu-item>Eliminar</button>
+                </mat-menu>
+
+            </mat-card-header>
+
+            <mat-card-content class="dashboard-card-content">
+                <mat-nav-list class="grip-full report">
+                    <button mat-menu-item>Ver gráfico de asistencia</button>
+                    <button mat-menu-item>Ver gráfico de notas</button>
+                    <button mat-menu-item>Ver gráfico de observaciones</button>
+                    <button mat-menu-item>Ver mis interacciones</button>
+                </mat-nav-list>
+
+            </mat-card-content>
+
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="4">
+        <mat-card class="dashboard-card dashthree">
+            <mat-card-header>
+
+                <mat-card-title>
+                    Administrador
+                </mat-card-title>
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item>Expandir</button>
+                    <button mat-menu-item>Eliminar</button>
+                </mat-menu>
+
+            </mat-card-header>
+
+            <mat-card-content class="dashboard-card-content">
+                <mat-nav-list>
+                    <button mat-menu-item>Administrar Periodos</button>
+                    <button mat-menu-item>Administrar Profesores</button>
+                </mat-nav-list>
+
+                <mat-nav-list>
+                    <button mat-menu-item>Administrar Clases</button>
+                    <button mat-menu-item>Opciones y Herramientas</button>
+                </mat-nav-list>
+                
+            </mat-card-content>
+
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>
