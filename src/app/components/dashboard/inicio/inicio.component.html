@@ -1,10 +1,10 @@
 <mat-toolbar>
-    <span>Bienvenido Profesor(a)</span>
+    <app-breadcrumbs></app-breadcrumbs>
 </mat-toolbar>
 
 
 
-<mat-grid-list cols="4" rowHeight="70px">
+<mat-grid-list [cols]="cols" rowHeight="70px" (window:resize)="onResize($event)" class="entrada grid">
 
     <mat-grid-tile [colspan]="2" [rowspan]="6">
         <mat-card class="dashboard-card">

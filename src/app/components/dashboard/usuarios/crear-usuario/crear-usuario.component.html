@@ -2,26 +2,26 @@
     <app-breadcrumbs></app-breadcrumbs>
 </mat-toolbar>
 
-<mat-card style="margin-top: 20px;">
+<mat-card class="entrada">
 
     <form (ngSubmit)="agregarAlumno()" [formGroup]="alumnoForm">
-        <mat-grid-list cols="4" rowHeight="70px">
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-grid-list cols="4" rowHeight="70px" (window:resize)="onResize($event)">
+            <mat-grid-tile [colspan]="cols" [rowspan]="1">
                <mat-form-field class="ancho">
                    <mat-label>Nombre</mat-label>
                     <input formControlName="nombre" matInput type="text" autocomplete="off">
                </mat-form-field>
             </mat-grid-tile>
-            <mat-grid-tile [colspan]="3" [rowspan]="4">
-                <img src="../../../../../assets/img/avatar.png" height="100%">
+            <mat-grid-tile [colspan]="rows" [rowspan]="4">
+                <img src="../../../../../assets/img/avatar.png" height="100%" class="img-alumno">
             </mat-grid-tile>
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-grid-tile [colspan]="cols" [rowspan]="1">
                 <mat-form-field class="ancho">
                     <mat-label>Apellido</mat-label>
                      <input formControlName="apellido" matInput type="text" autocomplete="off">
                 </mat-form-field>
             </mat-grid-tile>
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-grid-tile [colspan]="cols" [rowspan]="1">
                 <mat-form-field class="ancho">
                     <mat-label>Sexo</mat-label>
                   -  <mat-select formControlName="sexo">
@@ -31,7 +31,7 @@
                       </mat-select>
                 </mat-form-field>
             </mat-grid-tile>
-            <mat-grid-tile>
+            <mat-grid-tile [colspan]="cols" [rowspan]="1">
                 <mat-form-field appearance="fill" class="ancho">
                     <mat-label>Fecha Nacimiento</mat-label>
                     <input formControlName="fec_nac" matInput [matDatepicker]="picker">
@@ -49,7 +49,7 @@
 
                 </mat-form-field>
             </mat-grid-tile> -->
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-grid-tile [colspan]="cols" [rowspan]="1">
                 <button mat-raised-button type="button">Volver</button>
                 <button class="btn-mat" mat-raised-button color="primary" type="submit">Aceptar</button>
             </mat-grid-tile>

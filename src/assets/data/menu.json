@@ -1,6 +1,6 @@
 [
     {
-        "nombre" : "Dashboard",
+        "nombre" : "Inicio",
         "redirect" : "inicio"
     },
     {
@@ -8,11 +8,11 @@
         "redirect" : "usuarios"
     },
     {
-        "nombre" : "Asistencia",
-        "redirect" : "asistencias"
+        "nombre" : "Calificaciones",
+        "redirect" : "calificaciones"
     },
     {
-        "nombre" : "Reportes",
-        "redirect" : "reportes"
+        "nombre" : "Asistencia",
+        "redirect" : "asistencias"
     }
 ]

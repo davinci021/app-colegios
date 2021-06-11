@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       //Redireccionar
-      this.router.navigate(['dashboard']);
+      this.router.navigateByUrl('/dashboard/inicio');
       this.loading = false;
     }, 2000)
   }

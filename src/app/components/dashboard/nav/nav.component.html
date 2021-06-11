@@ -58,12 +58,13 @@
       <span class="example-spacer"></span>
       <button *ngFor="let men of menu" mat-button [routerLink]="men.redirect">{{ men.nombre }}</button>
       <span class="example-spacer"></span>
-      <button routerLink="login" mat-icon-button class="example-icon" aria-label="Example icon-button with logout icon">
+      <button (click)="salir()" mat-icon-button class="example-icon" aria-label="Example icon-button with logout icon">
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
-
+    
     <router-outlet></router-outlet>
+    
   
   </mat-sidenav-content>
 </mat-sidenav-container>

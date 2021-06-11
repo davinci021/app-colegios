@@ -21,10 +21,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { NewdashboarComponent } from './newdashboar/newdashboar.component';
+import { CalificacionesComponent } from './calificaciones/calificaciones.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent, NewdashboarComponent],
+  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent, NewdashboarComponent, CalificacionesComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

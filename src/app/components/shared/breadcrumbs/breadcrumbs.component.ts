@@ -5,7 +5,7 @@ import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-breadcrumbs',
-  templateUrl: './breadcrumbs.component.html',
+  template: '{{titulo}}',
   styleUrls: ['./breadcrumbs.component.css']
 })
 export class BreadcrumbsComponent implements OnDestroy{

@@ -1,4 +1,5 @@
 
+
 .sidenav-container {
   height: 100%;
 }
@@ -96,7 +97,7 @@ mat-divider{
 }
 
 @media (max-width:640px){
-  
+
   .text-logo{
     display: none;
   }
