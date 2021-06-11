@@ -22,11 +22,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { MatListModule } from '@angular/material/list';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [BreadcrumbsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -50,6 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatDatepickerModule,
     MatListModule,
+    MatDialogModule,
     MatNativeDateModule
 
   ],
@@ -73,7 +75,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatListModule,
     MatNativeDateModule,
-
+    BreadcrumbsComponent,
+    MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
   ]

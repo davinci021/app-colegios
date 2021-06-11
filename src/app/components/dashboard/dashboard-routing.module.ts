@@ -9,11 +9,11 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, children: [
-    { path: 'inicio', component: InicioComponent},
-    { path: 'usuarios', component: UsuariosComponent},
-    { path: 'reportes', component: ReportesComponent},
-    { path: 'nuevo', component: CrearUsuarioComponent},
-    { path: 'asistencias', component: AsistenciaComponent},
+    { path: 'inicio', component: InicioComponent, data: { titulo: 'Administrador'} },
+    { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Alumnos'}},
+    { path: 'reportes', component: ReportesComponent, data: { titulo: 'Reportes'}},
+    { path: 'nuevo', component: CrearUsuarioComponent, data: { titulo: 'Crear Alumno'}},
+    { path: 'asistencias', component: AsistenciaComponent, data: { titulo: 'Asistencias'}},
   ]}
 ];
 
