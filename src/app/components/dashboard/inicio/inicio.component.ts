@@ -11,7 +11,6 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     this.cols = (window.innerWidth <= 639) ? 2 : 4;
-
   }
 
   onResize(event) {

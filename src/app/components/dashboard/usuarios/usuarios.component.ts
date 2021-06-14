@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
-export interface Alumnos {
+export interface Usuario {
   nombre: string;
   apellido: string;
   position: number;
@@ -10,18 +10,13 @@ export interface Alumnos {
   fec_nac: string;
 }
 
-export interface Notas {
-
-}
-
-
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  listarAlumnos: Alumnos[] = [];
+  listarUsuario: Usuario[] = [];
   
   displayedColumns: string[] = ['position', 'nombre', 'apellido', 'Sexo', 'Fecha Nacimiento', 'acciones'];
   dataSource = new MatTableDataSource();
@@ -33,8 +28,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   cargarAlumno(){
-    this.listarAlumnos = this.usuarioServices.getUsuarios();
-    this.dataSource = new MatTableDataSource(this.listarAlumnos);
+    this.listarUsuario = this.usuarioServices.getUsuarios();
+    this.dataSource = new MatTableDataSource(this.listarUsuario);
   }
 
   editarAlumno(elemento:number){

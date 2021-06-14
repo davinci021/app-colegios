@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Alumnos } from '../components/dashboard/usuarios/usuarios.component';
+import { Usuario } from '../components/dashboard/usuarios/usuarios.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  listado_alumnos: Alumnos[] = [
+  listado_alumnos: Usuario[] = [
     {position: 1, nombre: 'David', apellido: "Zamorano Nieto", sexo: 'M', fec_nac: '1991-06-09'},
     {position: 2, nombre: 'Pedro', apellido: "Nieto Cabello", sexo: 'M', fec_nac: '1991-06-09'},
     {position: 3, nombre: 'Jose', apellido: "Cabello Zamorano", sexo: 'M', fec_nac: '1991-06-09'},

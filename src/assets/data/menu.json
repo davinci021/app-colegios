@@ -5,7 +5,7 @@
     },
     {
         "nombre" : "Alumnos",
-        "redirect" : "usuarios"
+        "redirect" : "alumnos"
     },
     {
         "nombre" : "Calificaciones",

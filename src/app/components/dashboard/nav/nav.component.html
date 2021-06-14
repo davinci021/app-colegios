@@ -1,11 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav class="sidenav" fixedInViewport
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport (window:resize)="onResize($event)"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="'over'"
-      [opened]="false">
+      [mode]="modeSidebar"
+      [opened]="modeOpen">
       <button mat-button (click)="sidenav.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        
       </button>
       <mat-divider></mat-divider>
       <mat-nav-list class="signature">
@@ -19,7 +18,7 @@
       </mat-nav-list>
       <mat-divider></mat-divider>
       
-    <mat-nav-list>
+    <mat-nav-list >
       <a mat-list-item ><mat-icon>auto_stories</mat-icon>Asignaturas</a>
       <a mat-list-item ><mat-icon>school</mat-icon>Alumnos</a>
       <a mat-list-item [matMenuTriggerFor]="beforeMenu"><mat-icon style="color: #5848b3;">add_circle</mat-icon>
@@ -34,7 +33,7 @@
     
     <mat-divider></mat-divider>
 
-    <mat-nav-list>
+    <mat-nav-list >
       <a mat-list-item ><mat-icon style="color: #25915e;">description</mat-icon>Exportar</a>
       <a mat-list-item ><mat-icon style="color: #7fa8c4;">print</mat-icon>Imprimir</a>
       <a mat-list-item ><mat-icon>settings</mat-icon>Opciones y Herramientas</a>
@@ -56,8 +55,14 @@
       </button>
       A<span class="text-logo">pp </span>C<span class="text-logo">olegios</span>
       <span class="example-spacer"></span>
-      <button *ngFor="let men of menu" mat-button [routerLink]="men.redirect">{{ men.nombre }}</button>
+      <mat-list-item [class.changestyle]="check">
+        <button *ngFor="let men of menu" mat-button [routerLink]="men.redirect">{{ men.nombre }}</button>
+      </mat-list-item>
       <span class="example-spacer"></span>
+      <button mat-button class="menu-nav" [matMenuTriggerFor]="navegar">Menu</button>
+      <mat-menu #navegar xPosition="before">
+        <button mat-menu-item *ngFor="let item of menu" [routerLink]="item.redirect">{{item.nombre}}</button>
+      </mat-menu>
       <button (click)="salir()" mat-icon-button class="example-icon" aria-label="Example icon-button with logout icon">
         <mat-icon>logout</mat-icon>
       </button>

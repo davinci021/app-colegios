@@ -50,6 +50,15 @@
   grid-column: span 2;
 }
 
+.changestyle{
+  display: none;
+}
+
+.menu-nav{
+  display: none;
+}
+
+
 mat-nav-list{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -98,8 +107,17 @@ mat-divider{
 
 @media (max-width:640px){
 
+  
+
+}
+
+@media (max-width:899px){
   .text-logo{
     display: none;
+  }
+
+  .menu-nav{
+    display: flex;
   }
 
 }

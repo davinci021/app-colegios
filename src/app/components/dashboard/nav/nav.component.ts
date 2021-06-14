@@ -15,6 +15,9 @@ import Swal from 'sweetalert2';
 })
 export class NavComponent implements OnInit{
   public menu:Menu[];
+  modeSidebar:any;
+  modeOpen:boolean;
+  check:boolean=false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -27,7 +30,16 @@ export class NavComponent implements OnInit{
               private router:Router) {}
   
   ngOnInit(): void {
-    this.getMenu();  
+    this.getMenu();
+    if(window.innerWidth <= 900){
+      this.modeSidebar = 'over';
+      this.modeOpen = false;
+      this.check = true;
+    } else {
+      this.modeSidebar = 'side';
+      this.modeOpen = true;
+      this.check = false;
+    }
   }
 
   getMenu(){
@@ -35,6 +47,18 @@ export class NavComponent implements OnInit{
       .subscribe(menu => {
         this.menu = menu;
       });
+  }
+
+  onResize(event) {
+    if(event.target.innerWidth <= 899){
+      this.modeSidebar = 'over';
+      this.modeOpen = false;
+      this.check = true;
+    } else {
+      this.modeSidebar = 'side';
+      this.modeOpen = true;
+      this.check = false;
+    }
   }
 
   salir(){

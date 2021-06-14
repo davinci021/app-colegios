@@ -22,10 +22,11 @@ import { MatListModule } from '@angular/material/list';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { NewdashboarComponent } from './newdashboar/newdashboar.component';
 import { CalificacionesComponent } from './calificaciones/calificaciones.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent, NewdashboarComponent, CalificacionesComponent],
+  declarations: [DashboardComponent, InicioComponent, UsuariosComponent, ReportesComponent, NavbarComponent, CrearUsuarioComponent, NavComponent, AsistenciaComponent, NewdashboarComponent, CalificacionesComponent, AlumnosComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
